@@ -13,15 +13,21 @@ class MyArray(Array):
         self.data.append(value)
 
     def get(self, index: int) -> int:
+        if index < 0 or index >= len(self.data):
+            raise IndexError("Índice fora do intervalo")
         return self.data[index]
 
     def set(self, index: int, value: int) -> None:
+        if index < 0 or index >= len(self.data):
+            raise IndexError("Índice fora do intervalo")
         self.data[index] = value
 
     def remove(self, value: int) -> None:
         self.data.remove(value)
 
     def insert(self, index: int, value: int) -> None:
+        if index < 0 or index > len(self.data):
+            raise IndexError("Índice fora do intervalo")
         self.data.insert(index, value)
 
     def __len__(self) -> int:
