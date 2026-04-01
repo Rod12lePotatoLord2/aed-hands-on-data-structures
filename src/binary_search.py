@@ -12,10 +12,10 @@ def binary_search(array: MyArray, target: int) -> int:
 
     while low <= high:
         mid = (low + high) // 2
-        
+
         if array[mid] == target:
             return mid
-        
+
         if array[mid] < target:
             low = mid + 1
         else:
